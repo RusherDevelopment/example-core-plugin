@@ -1,6 +1,5 @@
 package org.example;
 
-import org.rusherhack.client.api.RusherHackAPI;
 import org.rusherhack.client.api.plugin.Plugin;
 
 /**
@@ -10,28 +9,22 @@ import org.rusherhack.client.api.plugin.Plugin;
  */
 public class ExamplePlugin extends Plugin {
 	
+	public static long minecraftInitTime = 0L;
+	public static ExamplePlugin INSTANCE;
+	
 	@Override
 	public void onLoad() {
+		INSTANCE = this;
 		
-		//logger
-		this.getLogger().info("Hello World!");
+		this.getLogger().info("Loading example core plugin");
 		
-		//creating and registering a new module
-		final ExampleModule exampleModule = new ExampleModule();
-		RusherHackAPI.getModuleManager().registerFeature(exampleModule);
+		//do stuff like registering modules here
 		
-		//creating and registering a new hud element
-		final ExampleHudElement exampleHudElement = new ExampleHudElement();
-		RusherHackAPI.getHudManager().registerFeature(exampleHudElement);
-		
-		//creating and registering a new command
-		final ExampleCommand exampleCommand = new ExampleCommand();
-		RusherHackAPI.getCommandManager().registerFeature(exampleCommand);
 	}
 	
 	@Override
 	public void onUnload() {
-		this.getLogger().info("Example plugin unloaded!");
+		this.getLogger().info("Example core plugin unloaded!");
 	}
 	
 }
