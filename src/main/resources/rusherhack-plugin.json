@@ -2,11 +2,14 @@
   "Plugin-Class": "org.example.ExamplePlugin",
   "Name": "${project.plugin_name}",
   "Version": "${project.plugin_version}",
-  "Description": "Example rusherhack plugin",
+  "Description": "Example rusherhack core plugin",
   "Authors": [
     "John200410"
   ],
   "Minecraft-Versions": [
     "${project.minecraft_version}"
+  ],
+  "Mixin-Configs": [
+    "mixins.example-plugin.json"
   ]
 }
